@@ -18,7 +18,7 @@ const MongoDBStore = require("connect-mongo");
 
 
 const userRoutes = require('./routes/users');
-const campgroundRoutes = require('./routes/campgrounds');
+const campgroundRoutes = require('./routes/photos');
 const reviewRoutes = require('./routes/reviews');
 
 
@@ -90,8 +90,8 @@ app.use((req, res, next) => {
 
 
 app.use('/', userRoutes);
-app.use('/campgrounds', campgroundRoutes)
-app.use('/campgrounds/:id/reviews', reviewRoutes)
+app.use('/photo', campgroundRoutes)
+app.use('/photo/:id/reviews', reviewRoutes)
 
 
 app.get('/', (req, res) => {

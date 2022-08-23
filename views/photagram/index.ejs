@@ -1,6 +1,6 @@
 <% layout('layouts/boilerplate')%>
 
-<h1>All Campgrounds</h1>
+<h1>All Photos</h1>
 
 
 
@@ -23,12 +23,12 @@
                     <!--                </p>-->
                     <!--                <a class="btn btn-primary" href="/campgrounds/<%=campground._id%>">View <%=campground.title%></a>-->
                     <div class="btn-group">
-                        <form action="/campgrounds/<%=campground._id%>/like" method="GET">
+                        <form action="/photo/<%=campground._id%>/like" method="GET">
                             <button class="btn btn-sm btn-secondary">
                                 <i class="fas fa-thumbs-up" aria-hidden="true"></i> Like
                             </button>
                         </form>
-                        <form class="inline-form" action="/campgrounds/<%=campground._id%>" method="GET">
+                        <form class="inline-form" action="/photo/<%=campground._id%>" method="GET">
                             <button class="btn btn-sm btn-outline-secondary"><i class="fas fa-mountain" aria-hidden="true"></i> View</button>
                         </form>
                     </div>

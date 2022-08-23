@@ -5,11 +5,11 @@ const { cloudinary } = require("../cloudinary");
 
 module.exports.index = async (req, res) => {
     const campgrounds = await Campground.find({});
-    res.render('campgrounds/index', { campgrounds })
+    res.render('photagram/index', { campgrounds })
 }
 
 module.exports.renderNewForm = (req, res) => {
-    res.render('campgrounds/new');
+    res.render('photagram/new');
 }
 
 module.exports.createCampground = async (req, res, next) => {
@@ -24,31 +24,31 @@ module.exports.createCampground = async (req, res, next) => {
     await campground.save();
     console.log(campground);
     req.flash('success', 'Successfully made a new campground!');
-    res.redirect(`/campgrounds/${campground._id}`)
+    res.redirect(`/photo/${campground._id}`)
 }
 
 module.exports.showCampground = async (req, res,) => {
-    const campground = await Campground.findById(req.params.id).populate({
+    const photo = await Campground.findById(req.params.id).populate({
         path: 'reviews',
         populate: {
             path: 'author'
         }
     }).populate('author');
-    if (!campground) {
+    if (!photo) {
         req.flash('error', 'Cannot find that campground!');
-        return res.redirect('/campgrounds');
+        return res.redirect('/photo');
     }
-    res.render('campgrounds/show', { campground });
+    res.render('photagram/show', { photo });
 }
 
 module.exports.renderEditForm = async (req, res) => {
     const { id } = req.params;
-    const campground = await Campground.findById(id)
-    if (!campground) {
+    const photagram = await Campground.findById(id)
+    if (!photagram) {
         req.flash('error', 'Cannot find that campground!');
-        return res.redirect('/campgrounds');
+        return res.redirect('/photo');
     }
-    res.render('campgrounds/edit', { campground });
+    res.render('photagram/edit', { photagram });
 }
 
 module.exports.updateCampground = async (req, res) => {
@@ -65,14 +65,14 @@ module.exports.updateCampground = async (req, res) => {
         await campground.updateOne({ $pull: { images: { filename: { $in: req.body.deleteImages } } } })
     }
     req.flash('success', 'Successfully updated campground!');
-    res.redirect(`/campgrounds/${campground._id}`)
+    res.redirect(`/photo/${campground._id}`)
 }
 
 module.exports.deleteCampground = async (req, res) => {
     const { id } = req.params;
     await Campground.findByIdAndDelete(id);
     req.flash('success', 'Successfully deleted campground')
-    res.redirect('/campgrounds');
+    res.redirect('/photo');
 }
 
 module.exports.addLike = async (req, res) => {
@@ -83,5 +83,5 @@ module.exports.addLike = async (req, res) => {
     campground.likeduser.push(req.user._id);
     await campground.save();
     req.flash('success', 'Successfully increased price!');
-    res.redirect(`/campgrounds/${campground._id}`)
+    res.redirect(`/photo/${campground._id}`)
 }
