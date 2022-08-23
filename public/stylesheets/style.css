@@ -1,0 +1,14 @@
+#navigation{
+    background-color:rgba(0, 153, 218, 0.9);
+    padding: 20px 10px;
+    z-index: 50;
+    width: 100%;
+}
+
+#navigation li{
+    padding: 0 10px;
+}
+
+#navigation li a{
+    color: #fff;
+}

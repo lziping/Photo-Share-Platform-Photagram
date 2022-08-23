@@ -4,8 +4,8 @@ const { cloudinary } = require("../cloudinary");
 
 
 module.exports.index = async (req, res) => {
-    const campgrounds = await Campground.find({});
-    res.render('photagram/index', { campgrounds })
+    const allPhoto = await Campground.find({});
+    res.render('photagram/index', { allPhoto })
 }
 
 module.exports.renderNewForm = (req, res) => {
@@ -23,7 +23,7 @@ module.exports.createCampground = async (req, res, next) => {
 
     await campground.save();
     console.log(campground);
-    req.flash('success', 'Successfully made a new campground!');
+    req.flash('success', 'Successfully Posted!');
     res.redirect(`/photo/${campground._id}`)
 }
 
@@ -35,7 +35,7 @@ module.exports.showCampground = async (req, res,) => {
         }
     }).populate('author');
     if (!photo) {
-        req.flash('error', 'Cannot find that campground!');
+        req.flash('error', 'Cannot find!');
         return res.redirect('/photo');
     }
     res.render('photagram/show', { photo });
@@ -45,7 +45,7 @@ module.exports.renderEditForm = async (req, res) => {
     const { id } = req.params;
     const photagram = await Campground.findById(id)
     if (!photagram) {
-        req.flash('error', 'Cannot find that campground!');
+        req.flash('error', 'Cannot find!');
         return res.redirect('/photo');
     }
     res.render('photagram/edit', { photagram });
@@ -64,14 +64,14 @@ module.exports.updateCampground = async (req, res) => {
         }
         await campground.updateOne({ $pull: { images: { filename: { $in: req.body.deleteImages } } } })
     }
-    req.flash('success', 'Successfully updated campground!');
+    req.flash('success', 'Successfully Updated!');
     res.redirect(`/photo/${campground._id}`)
 }
 
 module.exports.deleteCampground = async (req, res) => {
     const { id } = req.params;
     await Campground.findByIdAndDelete(id);
-    req.flash('success', 'Successfully deleted campground')
+    req.flash('success', 'Successfully deleted')
     res.redirect('/photo');
 }
 
@@ -82,6 +82,5 @@ module.exports.addLike = async (req, res) => {
     campground.like += 1;
     campground.likeduser.push(req.user._id);
     await campground.save();
-    req.flash('success', 'Successfully increased price!');
     res.redirect(`/photo/${campground._id}`)
 }
