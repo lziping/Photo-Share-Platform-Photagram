@@ -1,0 +1,34 @@
+<% layout('layouts/boilerplate')%>
+
+<h1><%=userInfo.username%></h1>
+
+<section class="row">
+    <% for (let photo of allPhoto){%>
+    <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+            <!-- START: Campground Image -->
+
+            <img class="img-fluid" alt="" src="<%=photo.images[0].url%>" >
+
+            <rect width="100%" height="100%" fill="#55595c">
+                <div class="card-body">
+
+                    <div class="btn-group">
+                        <form action="/photo/<%=photo._id%>/like" method="GET">
+                            <button class="btn btn-sm btn-secondary">
+                                <i class="fas fa-thumbs-up" aria-hidden="true"></i> Like
+                            </button>
+                        </form>
+                        <form class="inline-form" action="/photo/<%=photo._id%>" method="GET">
+                            <button class="btn btn-sm btn-outline-secondary"><i class="fas fa-mountain" aria-hidden="true"></i> View</button>
+                        </form>
+                    </div>
+                    <small class="text-muted"><%= photo.like%></small>
+                </div>
+            </rect>
+        </div>
+
+    </div>
+
+    <% }%>
+</section>

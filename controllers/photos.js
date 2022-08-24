@@ -1,12 +1,13 @@
-const Campground = require('../models/campground');
+const Campground = require('../models/photagram');
 const mapBoxToken = process.env.MAPBOX_TOKEN;
 const { cloudinary } = require("../cloudinary");
 
 
 module.exports.index = async (req, res) => {
-    const allPhoto = await Campground.find({});
+    const allPhoto = await Campground.find({}).sort({ _id: -1 });
     res.render('photagram/index', { allPhoto })
 }
+
 
 module.exports.renderNewForm = (req, res) => {
     res.render('photagram/new');

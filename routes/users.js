@@ -5,6 +5,12 @@ const catchAsync = require('../utils/catchAsync');
 const User = require('../models/user');
 const users = require('../controllers/users');
 
+router.route('/profile/')
+    .get(users.renderProfile);
+
+// router.route('/profile/follower/:id')
+//     .get(users.renderFollower);
+
 router.route('/register')
     .get(users.renderRegister)
     .post(catchAsync(users.register));
