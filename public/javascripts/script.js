@@ -6,10 +6,11 @@ $(document).ready(function () {
     var t = new Typed(".slides-sub", {
         strings: ["Welcome to Photagram! " +
         "Feel free to share some of your own and comment on others!"],
-        typeSpeed: 70,
-        loop: true,
+        typeSpeed: 100,
+        loop: false,
         startDelay: 1000,
         showCursor: false,
+
     });
     $('.owl-carousel').owlCarousel({
         // loop: true,

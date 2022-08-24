@@ -3,17 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="1ecf55e2-3d4e-4c0a-830a-d6de655a1d35" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/javascripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/stylesheets/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/home.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/home.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layouts/boilerplate.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/layouts/boilerplate.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/partials/footer.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/footer.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/partials/navbar.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/navbar.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/photagram/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/photagram/index.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/photagram/show.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/photagram/show.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/users/follower.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/users/profile.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/users/profile.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +46,7 @@
       <workItem from="1661233866671" duration="9054000" />
       <workItem from="1661246174613" duration="6150000" />
       <workItem from="1661307028825" duration="72000" />
-      <workItem from="1661310219464" duration="9581000" />
+      <workItem from="1661310219464" duration="12021000" />
     </task>
     <servers />
   </component>

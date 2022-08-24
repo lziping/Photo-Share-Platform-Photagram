@@ -23,9 +23,21 @@
 
 }
 
-.btn-secondary, .btn-secondary:hover{
-    color: #333;
-    text-shadow: none;
+#btn{
+    display:table;
+    border: 2px white solid;
+    border-radius: 10px;
+    margin: 1% auto 1% auto;
+    padding: 20px;
+    font-family: "Microsoft JhengHei",serif;  /* 微軟正黑體 */
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    text-shadow: 0 1px 1px rgba(0,0,0,.4),0 1px 2px rgba(0,0,0,.2);
+}
+
+#btn:hover{
+    background-color: rgba(255,255,255,0.2); /* 半透明 */
 }
 
 .slides-overlay{

@@ -1,12 +1,13 @@
 <% layout('layouts/boilerplate')%>
 
-<h1><%=userInfo.username%></h1>
+<h1>Hi~ <%=userInfo.username%></h1>
+<h2>Welcome to your gallery</h2>
+<br></br>
 
 <section class="row">
     <% for (let photo of allPhoto){%>
     <div class="col-md-4">
         <div class="card mb-4 shadow-sm">
-            <!-- START: Campground Image -->
 
             <img class="img-fluid" alt="" src="<%=photo.images[0].url%>" >
 
