@@ -1,5 +1,5 @@
 const User = require('../models/user');
-const Campground = require('../models/photagram');
+const Photagram = require('../models/photagram');
 
 module.exports.renderRegister = (req, res) => {
     res.render('users/register');
@@ -39,8 +39,8 @@ module.exports.logout = (req, res) => {
 }
 
 module.exports.renderProfile = async (req, res) => {
-    //get all campgrounds created by user
-    const allPhoto = await Campground.find({ author: req.user._id }).sort({ _id: -1 });
+    //get all photagram created by user
+    const allPhoto = await Photagram.find({ author: req.user._id }).sort({ _id: -1 });
     const userInfo = await User.findById(req.user._id);
     res.render('users/profile', { allPhoto,userInfo });
 }

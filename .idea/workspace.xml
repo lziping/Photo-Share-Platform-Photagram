@@ -3,10 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="1ecf55e2-3d4e-4c0a-830a-d6de655a1d35" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/home.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/home.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/users/profile.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/users/profile.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/photos.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/photos.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/reviews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/photagram.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/photagram.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/photos.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/photos.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/reviews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schemas.js" beforeDir="false" afterPath="$PROJECT_DIR$/schemas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/photagram/edit.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/photagram/edit.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/photagram/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/photagram/index.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/photagram/new.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/photagram/new.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/photagram/show.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/photagram/show.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +55,7 @@
       <workItem from="1661233866671" duration="9054000" />
       <workItem from="1661246174613" duration="6150000" />
       <workItem from="1661307028825" duration="72000" />
-      <workItem from="1661310219464" duration="12021000" />
+      <workItem from="1661310219464" duration="13815000" />
     </task>
     <servers />
   </component>

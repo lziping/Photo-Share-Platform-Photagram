@@ -1,10 +1,10 @@
-const Campground = require('../models/photagram');
+const Photagram = require('../models/photagram');
 const mapBoxToken = process.env.MAPBOX_TOKEN;
 const { cloudinary } = require("../cloudinary");
 
 
 module.exports.index = async (req, res) => {
-    const allPhoto = await Campground.find({}).sort({ _id: -1 });
+    const allPhoto = await Photagram.find({}).sort({ _id: -1 });
     res.render('photagram/index', { allPhoto })
 }
 
@@ -13,23 +13,23 @@ module.exports.renderNewForm = (req, res) => {
     res.render('photagram/new');
 }
 
-module.exports.createCampground = async (req, res, next) => {
+module.exports.createPhotagram = async (req, res, next) => {
 
-    const campground = new Campground(req.body.campground);
-    campground.images = req.files.map(f => ({ url: f.path, filename: f.filename }));
-    campground.author = req.user._id;
-    campground.like = 0
+    const photagram = new Photagram(req.body.photagram);
+    photagram.images = req.files.map(f => ({ url: f.path, filename: f.filename }));
+    photagram.author = req.user._id;
+    photagram.like = 0
     var nowDate = new Date();
-    campground.date = nowDate.getFullYear()+'/'+(nowDate.getMonth()+1)+'/'+nowDate.getDate();
+    photagram.date = nowDate.getFullYear()+'/'+(nowDate.getMonth()+1)+'/'+nowDate.getDate();
 
-    await campground.save();
-    console.log(campground);
+    await photagram.save();
+    console.log(photagram);
     req.flash('success', 'Successfully Posted!');
-    res.redirect(`/photo/${campground._id}`)
+    res.redirect(`/photo/${photagram._id}`)
 }
 
-module.exports.showCampground = async (req, res,) => {
-    const photo = await Campground.findById(req.params.id).populate({
+module.exports.showPhotagram = async (req, res,) => {
+    const photo = await Photagram.findById(req.params.id).populate({
         path: 'reviews',
         populate: {
             path: 'author'
@@ -44,7 +44,7 @@ module.exports.showCampground = async (req, res,) => {
 
 module.exports.renderEditForm = async (req, res) => {
     const { id } = req.params;
-    const photagram = await Campground.findById(id)
+    const photagram = await Photagram.findById(id)
     if (!photagram) {
         req.flash('error', 'Cannot find!');
         return res.redirect('/photo');
@@ -52,26 +52,26 @@ module.exports.renderEditForm = async (req, res) => {
     res.render('photagram/edit', { photagram });
 }
 
-module.exports.updateCampground = async (req, res) => {
+module.exports.updatePhotagram = async (req, res) => {
     const { id } = req.params;
     console.log(req.body);
-    const campground = await Campground.findByIdAndUpdate(id, { ...req.body.campground });
+    const photagram = await Photagram.findByIdAndUpdate(id, { ...req.body.photagram });
     const imgs = req.files.map(f => ({ url: f.path, filename: f.filename }));
-    campground.images.push(...imgs);
-    await campground.save();
+    photagram.images.push(...imgs);
+    await photagram.save();
     if (req.body.deleteImages) {
         for (let filename of req.body.deleteImages) {
             await cloudinary.uploader.destroy(filename);
         }
-        await campground.updateOne({ $pull: { images: { filename: { $in: req.body.deleteImages } } } })
+        await photagram.updateOne({ $pull: { images: { filename: { $in: req.body.deleteImages } } } })
     }
     req.flash('success', 'Successfully Updated!');
-    res.redirect(`/photo/${campground._id}`)
+    res.redirect(`/photo/${photagram._id}`)
 }
 
-module.exports.deleteCampground = async (req, res) => {
+module.exports.deletePhotagram = async (req, res) => {
     const { id } = req.params;
-    await Campground.findByIdAndDelete(id);
+    await Photagram.findByIdAndDelete(id);
     req.flash('success', 'Successfully deleted')
     res.redirect('/photo');
 }
@@ -79,9 +79,9 @@ module.exports.deleteCampground = async (req, res) => {
 module.exports.addLike = async (req, res) => {
 
     const { id } = req.params;
-    const campground = await Campground.findById(id);
-    campground.like += 1;
-    campground.likeduser.push(req.user._id);
-    await campground.save();
-    res.redirect(`/photo/${campground._id}`)
+    const photagram = await Photagram.findById(id);
+    photagram.like += 1;
+    photagram.likeduser.push(req.user._id);
+    await photagram.save();
+    res.redirect(`/photo/${photagram._id}`)
 }

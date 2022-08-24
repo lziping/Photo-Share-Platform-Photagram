@@ -1,31 +1,31 @@
 const express = require('express');
 const router = express.Router();
-const campgrounds = require('../controllers/photos');
+const photagram = require('../controllers/photos');
 const catchAsync = require('../utils/catchAsync');
-const { isLoggedIn, isAuthor, validateCampground } = require('../middleware');
+const { isLoggedIn, isAuthor, validatePhotagram } = require('../middleware');
 const multer = require('multer');
 const { storage } = require('../cloudinary');
 const upload = multer({ storage });
 
-const Campground = require('../models/photagram');
+const Photagram = require('../models/photagram');
 
 router.route('/')
-    .get(catchAsync(campgrounds.index))
-    .post(isLoggedIn, upload.array('image'), validateCampground, catchAsync(campgrounds.createCampground))
+    .get(catchAsync(photagram.index))
+    .post(isLoggedIn, upload.array('image'), validatePhotagram, catchAsync(photagram.createPhotagram))
 
 
-router.get('/new', isLoggedIn, campgrounds.renderNewForm)
+router.get('/new', isLoggedIn, photagram.renderNewForm)
 
 
 
 router.route('/:id')
-    .get(catchAsync(campgrounds.showCampground))
-    .put(isLoggedIn, isAuthor, upload.array('image'), validateCampground, catchAsync(campgrounds.updateCampground))
-    .delete(isLoggedIn, isAuthor, catchAsync(campgrounds.deleteCampground));
+    .get(catchAsync(photagram.showPhotagram))
+    .put(isLoggedIn, isAuthor, upload.array('image'), validatePhotagram, catchAsync(photagram.updatePhotagram))
+    .delete(isLoggedIn, isAuthor, catchAsync(photagram.deletePhotagram));
 
-router.get('/:id/edit', isLoggedIn, isAuthor, catchAsync(campgrounds.renderEditForm))
+router.get('/:id/edit', isLoggedIn, isAuthor, catchAsync(photagram.renderEditForm))
 
-router.get('/:id/like', isLoggedIn, campgrounds.addLike)
+router.get('/:id/like', isLoggedIn, photagram.addLike)
 
 
 module.exports = router;

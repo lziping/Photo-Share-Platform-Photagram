@@ -6,7 +6,7 @@
 <div class="row" id="show-card">
     <div class="col-12" style="position: center">
         <li class="list-group-item">@<%= photo.author.username%></li>
-        <div id="campgroundCarousel" class="carousel slide" data-ride="carousel">
+        <div id="photagramCarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <% photo.images.forEach((img, i) => {  %>
                 <div class="carousel-item <%= i === 0 ? 'active' : ''%>">
@@ -16,11 +16,11 @@
 
             </div>
             <% if(photo.images.length > 1) {%>
-            <a class="carousel-control-prev" href="#campgroundCarousel" role="button" data-slide="prev">
+            <a class="carousel-control-prev" href="#photagramCarousel" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next" href="#campgroundCarousel" role="button" data-slide="next">
+            <a class="carousel-control-next" href="#photagramCarousel" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
@@ -42,7 +42,7 @@
                         </form>
 
                     </div>
-                    <small style="text-align: right" id="liked-users" class="text-muted" data-toggle="modal" data-target="#campgroundLikes5d17a4481465145164336ec2">
+                    <small style="text-align: right" id="liked-users" class="text-muted" data-toggle="modal" data-target="#photagramLikes5d17a4481465145164336ec2">
                         <%if(photo.like > 1){%>
                             <li class="list-group-item">(<%= photo.like%>) Likes</li>
                         <%}else{%>
