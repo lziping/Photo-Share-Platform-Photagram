@@ -12,6 +12,7 @@ body{
 #show-card{
     -webkit-box-shadow: 0px 10px 13px -7px #000000, 2px 0px 15px 9px rgba(0,0,0,0);
     box-shadow: 0px 10px 13px -7px #000000, 2px 0px 15px 9px rgba(0,0,0,0);
+
 }
 
 .nav-link {
