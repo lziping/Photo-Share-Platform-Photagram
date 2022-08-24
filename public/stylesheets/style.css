@@ -1,14 +1,41 @@
+body{
+    background-color: #edede9;
+}
+
+#photo-card{
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 2px 0px 15px 9px rgba(0,0,0,0);
+    box-shadow: 0px 10px 13px -7px #000000, 2px 0px 15px 9px rgba(0,0,0,0);
+    margin-top: 5px;
+    padding-top: 5px;
+}
+
+#show-card{
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 2px 0px 15px 9px rgba(0,0,0,0);
+    box-shadow: 0px 10px 13px -7px #000000, 2px 0px 15px 9px rgba(0,0,0,0);
+}
+
+.nav-link {
+    padding: 0.25rem 0;
+    font-weight: 700;
+    color: rgba(255,255,255,0.5);
+    margin-left: 1rem;
+    border-bottom: 0.25rem solid transparent;
+}
+
+.nav-link:hover{
+    color: rgba(255,255,255,0.5);
+    border-bottom-color:rgba(255,255,255,0.5);
+}
+
+.nav-link.active {
+    color: white;
+    border-bottom-color:white;
+
+}
+
 #navigation{
     background-color:rgba(0, 153, 218, 0.9);
     padding: 20px 10px;
     z-index: 50;
     width: 100%;
-}
-
-#navigation li{
-    padding: 0 10px;
-}
-
-#navigation li a{
-    color: #fff;
 }

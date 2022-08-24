@@ -1,17 +1,10 @@
-body {
-    height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("https://images.unsplash.com/photo-1559521783-1d1599583485?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-    background-size: cover;
-    background-position: center;
-    text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
-    box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
-}
+
 .cover-container {
     max-width: 60vw;
 }
 
 .nav-link {
+    position: center;
     padding: 0.25rem 0;
     font-weight: 700;
     color: rgba(255,255,255,0.5);
@@ -33,4 +26,49 @@ body {
 .btn-secondary, .btn-secondary:hover{
     color: #333;
     text-shadow: none;
+}
+
+.slides-overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.slides-navigation .prev,
+.slides-navigation .next{
+    width:60px;
+    height:60px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.slides-navigation a.prev{
+    left: 20px;
+    background-image: url(../img/icons/leftarrow.png);
+}
+
+.slides-navigation a.next{
+    right: 20px;
+    background-image: url(../img/icons/rightarrow.png);
+}
+
+.slides-titleMessage{
+    z-index: 5;
+    text-align: center;
+    height: 250px;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    margin-top: -125px;
+}
+.slides-titleMessage .slides-heading p{
+    color: #fff;
+    text-shadow: 0px 2px 5px rgb(0 0 0 / 40%);
+    font-weight: 100;
+    letter-spacing: 7px;
+}
+
+.slides-container img{
+    max-height: 100em;
 }

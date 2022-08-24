@@ -1,4 +1,4 @@
-<nav id="navigation" class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav id="navigation" class="navbar navbar-expand-lg navbar-dark" style="background-color: #a5a5a5;">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Photagram</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
@@ -7,17 +7,17 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link" href="/">Home</a>
-                <a class="nav-link" href="/photo">Photos</a>
-                <a class="nav-link" href="/photo/new">Post New Photo</a>
+                <a class="nav-link" style="color: white" href="/">Home</a>
+                <a class="nav-link" style="color: white" href="/photo">Photos</a>
+                <a class="nav-link" style="color: white" href="/photo/new">Post New Photo</a>
             </div>
             <div class="navbar-nav ml-auto">
                 <% if(!currentUser) {%>
-                <a class="nav-link" href="/login">Login</a>
-                <a class="nav-link" href="/register">Register</a>
+                <a class="nav-link" style="color: white" href="/login">Login</a>
+                <a class="nav-link" style="color: white" href="/register">Register</a>
                 <% } else {%>
-                    <a class="nav-link" href="/profile/">Profile</a>
-                <a class="nav-link" href="/logout">Logout</a>
+                    <a class="nav-link" style="color: white" href="/profile/">Profile</a>
+                <a class="nav-link" style="color: white" href="/logout">Logout</a>
                 <% } %>
             </div>
         </div>
