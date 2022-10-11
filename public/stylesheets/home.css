@@ -39,6 +39,12 @@
 #btn:hover{
     background-color: rgba(255,255,255,0.2); /* 半透明 */
 }
+#viewGallery{
+
+    font-family: "Microsoft JhengHei",serif;  /* 微軟正黑體 */
+
+}
+
 
 .slides-overlay{
     width: 100%;
